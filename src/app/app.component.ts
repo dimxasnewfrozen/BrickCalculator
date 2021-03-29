@@ -9,6 +9,10 @@ export class AppComponent {
   title = 'cuttingboard';
 
   private scaleFactor = 50;
+  private heightScaleFactor = 20;
+
+  public height = 5;
+  public displayHeight = this.height * this.heightScaleFactor;
 
   public realWidth = 10;
   public pixelWidth = this.realWidth * this.scaleFactor;
@@ -20,6 +24,7 @@ export class AppComponent {
   public totalColumns = new Array(this.columns);
 
   public result = "";
+  public result2 = "";
 
   ngOnInit(): void {
     this.calculate();
@@ -33,10 +38,13 @@ export class AppComponent {
     this.totalColumns = new Array(parseInt(this.columns));
     this.columnWidth = this.pixelWidth / (parseInt(this.columns) + .5);
     this.halfWidth = this.columnWidth / 2;
+    this.displayHeight = this.height * this.heightScaleFactor;
 
     const pieceWidthResult = this.realWidth / (parseInt(this.columns) + .5);
     
     this.result = this.columns + " pieces at " + pieceWidthResult + " (mm/inches) and 1 at " + pieceWidthResult/2 + " (mm/inches)";
+    this.result2 = this.height * this.rows.length + " (mm/inches)";
+    
   }
 }
 

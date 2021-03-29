@@ -7,12 +7,21 @@ Number of full columns: <input [(ngModel)]="columns" (ngModelChange)="calculate(
 Number of Rows: <input [(ngModel)]="rows.length" (ngModelChange)="calculate()">
 <br/>
 
+Row Thickness  (in mm/inches): : <input [(ngModel)]="height" (ngModelChange)="calculate()">
+<br/>
+<hr>
+
 Result: {{result}}
+<br/>
+
+Total Height: {{result2}}
+<br/>
 
 <div *ngFor="let a of rows; let i = index;">
   <div class="row"
-    [style.width.px]="pixelWidth">
-    <div class="halfColumn" 
+  [style.width.px]="pixelWidth"
+  [style.height.px]="displayHeight">
+  <div class="halfColumn" 
       *ngIf="i%2 === 0"
       [style.width.px]="halfWidth">
     </div>
