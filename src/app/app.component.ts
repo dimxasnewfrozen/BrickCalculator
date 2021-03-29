@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cuttingboard';
 
+  private scaleFactor = 50;
+
   public realWidth = 10;
-  public pixelWidth = 800;
+  public pixelWidth = this.realWidth * this.scaleFactor;
   public columns: string = "2";
   public rows = new Array(4);
 
@@ -27,6 +29,7 @@ export class AppComponent {
     if (this.columns == "" || this.rows.length == 0)
       return;
 
+    this.pixelWidth = this.realWidth * this.scaleFactor;
     this.totalColumns = new Array(parseInt(this.columns));
     this.columnWidth = this.pixelWidth / (parseInt(this.columns) + .5);
     this.halfWidth = this.columnWidth / 2;
