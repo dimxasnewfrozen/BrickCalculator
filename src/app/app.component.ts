@@ -9,10 +9,9 @@ export class AppComponent {
   title = 'cuttingboard';
 
   private scaleFactor = 50;
-  private heightScaleFactor = 20;
-
-  public height = 5;
-  public displayHeight = this.height * this.heightScaleFactor;
+  
+  public height = 2;
+  public displayHeight = this.height * this.scaleFactor;
 
   public realWidth = 10;
   public pixelWidth = this.realWidth * this.scaleFactor;
@@ -38,7 +37,7 @@ export class AppComponent {
     this.totalColumns = new Array(parseInt(this.columns));
     this.columnWidth = this.pixelWidth / (parseInt(this.columns) + .5);
     this.halfWidth = this.columnWidth / 2;
-    this.displayHeight = this.height * this.heightScaleFactor;
+    this.displayHeight = this.height * this.scaleFactor;
 
     const pieceWidthResult = this.realWidth / (parseInt(this.columns) + .5);
     
