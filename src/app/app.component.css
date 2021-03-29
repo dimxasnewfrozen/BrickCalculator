@@ -1,0 +1,23 @@
+.row {
+    height:100px;
+    border:1px solid black;
+    margin:2px;
+}
+
+.column {
+    background-color:brown;
+    border:1px solid black;
+    height:100%;
+    display: inline-block;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.halfColumn{
+    background-color:brown;
+    border:1px solid black;
+    height:100%;
+    display: inline-block;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
